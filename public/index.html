@@ -13,49 +13,47 @@
   </head>
 
   <body>
-    <!--<h1 class="text-center">WELCOME TO SIMPOLL ppllllL!!!!<h1>
-          <h2>HUHHHH???</h2>
-          <span class="input-group-btn">
-          
-          </span>
-        --><!-- /input-group -->
-        
-
-      <!-- <ul class="list-group"> -->
-        <!-- http://www.w3schools.com/css/css_float.asp -->
-        <!-- <li class="list-group-item clearfix" ng-repeat="do in todos"> -->
-          
-         <!-- Accent-colored raised button with ripple -->
-          <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Dogecoins
-          </button> -->
-
-          <!-- Accent-colored raised button with ripple -->
-          <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> -->
-            <!-- Ass -->
-          <!-- </button> -->
+    
 
           <!-- Uses a transparent header that draws on top of the layout's background -->
             <style>
+            .mdl-button {
+              min-width: 49%;
+              /*line-height: 1000%;*/
+            }
             .demo-layout-transparent {
-              /*background: url('http://s3.favim.com/orig/40/cool-hipster-photo-photography-star-Favim.com-334404.jpg') center / cover;*/
+             
               background-color: #FCF398;
+
+            }
+            .mdl-card__title-text{
+              font-size: 300%;
+            }
+            .mdl-layout-title{
 
             }
             .demo-layout-transparent .mdl-layout__header,
             .demo-layout-transparent .mdl-layout__drawer-button {
               /* This background is dark, so we set text to white. Use 87% black instead if
                  your background is light. */
-              color: white;
+              color: black;
             }
             .center {
-              width: 70%;
-              position: absolute;
-              top: 80px;
+              width: 90%;
+              height: 95%;
+              margin-left: 5%;
+              margin-right: 5%;
+              margin-bottom: 5%
             }
 
-            .top{
+            .center-text{
+              position: absolute;
+              top: 27.5%;
+              left: 27.5%;
+            }
 
+            .thumbsupDiv{
+              width:10%;
             }
             </style>
 
@@ -67,21 +65,16 @@
                   <!-- Add spacer, to align navigation to the right -->
                   <div class="mdl-layout-spacer"></div>
                   <!-- Navigation -->
-                  <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                  </nav>
+        
                 </div>
               </header>
               <div class="mdl-layout__drawer">
-                <span class="mdl-layout-title">Title</span>
+                <span class="mdl-layout-title">Simpoll</span>
                 <nav class="mdl-navigation">
-                  <a class="mdl-navigation__link" href="">Link</a>
-                  <a class="mdl-navigation__link" href="">Link</a>
-                  <a class="mdl-navigation__link" href="">Link</a>
-                  <a class="mdl-navigation__link" href="">Link</a>
+                  <a class="mdl-navigation__link" href="">Options</a>
+                  <a class="mdl-navigation__link" href="">Options</a>
+                  <a class="mdl-navigation__link" href="">Options</a>
+                  <a class="mdl-navigation__link" href="">Log Out</a>
                 </nav>
               </div>
               <main class="mdl-layout__content">
@@ -89,12 +82,12 @@
               <!-- Wide card with share menu button -->
               <style>
               .demo-card-wide.mdl-card {
-                width: 512px;
+                
               }
               .demo-card-wide > .mdl-card__title {
                 color: #fff;
-                height: 200px;
-                width: 1000px;
+                height: 55%;
+                width: 100%;
                 background-color: #D193D1;
 
               }
@@ -105,21 +98,24 @@
 
               <div class="demo-card-wide mdl-card mdl-shadow--2dp center">
                 <div class="mdl-card__title">
-                  <h2 class="mdl-card__title-text">Welcome</h2>
+                  <h2 class="mdl-card__title-text center-text">Is Alex Turner a God?</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris sagittis pellentesque lacus eleifend lacinia...
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                  <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Get Started
-                  </a>
-                </div>
-                <div class="mdl-card__menu">
-                  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">share</i>
+                  <!-- Primary-colored flat button -->
+                  <button class="mdl-button mdl-js-button mdl-button--primary">
+                    Yes
                   </button>
+                  <!-- Colored raised button -->
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ">
+                    R U Mine Alex?
+                  </button>
+
+
+
+                </div>
+
+                <div class="mdl-card__menu">
+                  
                 </div>
               </div>
             </div>
