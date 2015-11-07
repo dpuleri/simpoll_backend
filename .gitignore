@@ -4,3 +4,6 @@ bin
 lib
 include
 pip-selfcheck.json
+
+# Python Stuff
+*.pyc
