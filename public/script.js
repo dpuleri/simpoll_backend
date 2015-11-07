@@ -2,21 +2,19 @@
 
 var myApp = angular.module('app', []);
 
-myApp.controller('MainCtrl', function ($scope){
-  console.log("HEY");
-  // $http({
-  //         url: $rootScope.paths.logoutPath,
-  //         method: "POST",
-  //         data: {
-  //           email: $scope.user.email
-  //         },
-  //         headers: Utility.headers
-  //       }).success(function (data, status, headers, config) {
+myApp.controller('MainCtrl', function ($scope, $http){
 
-  //       }).error(function (data, status, headers, config) {
-  //         Utility.flash.error("There was an error connecting to the server.");
-  //         console.error(data);
-  //       });
+  $http({
+          url: 'http://simpoll-remote.cloudapp.net/poll/563e510a886d36304f357dfd',
+          method: "GET",
+        }).success(function (data, status, headers, config) {
+          console.log(data);
+
+        }).error(function (data, status, headers, config) {
+          
+          console.log("Data not retrieved");
+          console.log(data);
+        });
 
   $scope.question = "Hey dad, I made it";
   
