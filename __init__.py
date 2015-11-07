@@ -14,16 +14,18 @@ def get_blueprints(app):
 get_blueprints(app)
 
 @app.route("/")
-def hello():
+def root_route():
+    return share_url(-1) # arbitrary
+
+@app.route("/<poll_id>")
+def share_url(poll_id):
     root_dir = os.path.dirname(os.getcwd())
-    # return url_for('/public/', filename='index.html')
     return send_from_directory('public', 'index.html')
-    # return app.send_static_file('./public/index.html')
 
 @app.route('/poll/<poll_id>', methods=['GET', 'PUT', 'DELETE'])
 def api_one_poll(poll_id):
     if len(poll_id) == 0 or poll_id is None:
-        hello()
+        root_route()
     elif request.method == 'GET':
         # handle 404 inside function
         return restful.get_poll(poll_id)
