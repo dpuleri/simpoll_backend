@@ -1,7 +1,8 @@
-from flask import Flask, request, abort
+import os
+from flask import Flask, request, abort, send_from_directory, url_for
 from flask.ext.mongoengine import MongoEngine
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app.config["MONGODB_SETTINGS"] = {'DB': "simpoll_db"}
 app.config["SECRET_KEY"] = "this_is_only_a_test"
 
@@ -14,11 +15,16 @@ get_blueprints(app)
 
 @app.route("/")
 def hello():
-    return "Hello this is world"
+    root_dir = os.path.dirname(os.getcwd())
+    # return url_for('/public/', filename='index.html')
+    return send_from_directory('public', 'index.html')
+    # return app.send_static_file('./public/index.html')
 
-@app.route('/<poll_id>', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/poll/<poll_id>', methods=['GET', 'PUT', 'DELETE'])
 def api_one_poll(poll_id):
-    if request.method == 'GET':
+    if len(poll_id) == 0 or poll_id is None:
+        hello()
+    elif request.method == 'GET':
         # handle 404 inside function
         return restful.get_poll(poll_id)
     elif request.method == 'PUT':
