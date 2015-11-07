@@ -1,7 +1,5 @@
 import datetime
-from flask import url_for
 from Simpoll import db
-
 
 class Poll(db.Document):
     created_at = db.DateTimeField(default=datetime.datetime.now, required=True)
@@ -16,13 +14,13 @@ class Poll(db.Document):
         # it's okay to use the first 7 bytes for url
         # because first 4 bytes are time and next 3 are
         # a machine id
-        return url_for('post', kwargs={"slug": self._id[0:6]})
+        return self._id[0:6]
 
     def __unicode__(self):
         return self.question
 
     meta = {
         'allow_inheritance': True,
-        'indexes': ['-created_at', 'slug'],
+        'indexes': ['-created_at'],
         'ordering': ['-created_at']
     }
