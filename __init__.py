@@ -1,10 +1,12 @@
 import os
 from flask import Flask, request, abort, send_from_directory, url_for
 from flask.ext.mongoengine import MongoEngine
+from flask.ext.cors import CORS
 
 app = Flask(__name__, static_url_path='')
 app.config["MONGODB_SETTINGS"] = {'DB': "simpoll_db"}
 app.config["SECRET_KEY"] = "this_is_only_a_test"
+CORS(app)
 
 db = MongoEngine(app)
 
