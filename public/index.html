@@ -2,58 +2,60 @@
 <html>
 
   <head>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <!-- Include the core AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+    <script src="script.js"></script>
+
 
     <title>Simpoll</title>
   </head>
 
-  <body>
-    
+  <body ng-app="app">
+    <div ng-controller="MainCtrl">
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+      <style>
+        .mdl-button {
+          min-width: 49%;
+          /*line-height: 1000%;*/
+        }
+        .demo-layout-transparent {
+         
+          background-color: #FCF398;
 
-          <!-- Uses a transparent header that draws on top of the layout's background -->
-            <style>
-            .mdl-button {
-              min-width: 49%;
-              /*line-height: 1000%;*/
-            }
-            .demo-layout-transparent {
-             
-              background-color: #FCF398;
+        }
+        .mdl-card__title-text{
+          font-size: 300%;
+        }
+        .mdl-layout-title{
 
-            }
-            .mdl-card__title-text{
-              font-size: 300%;
-            }
-            .mdl-layout-title{
+        }
+        .demo-layout-transparent .mdl-layout__header,
+        .demo-layout-transparent .mdl-layout__drawer-button {
+          /* This background is dark, so we set text to white. Use 87% black instead if
+             your background is light. */
+          color: black;
+        }
+        .center {
+          width: 90%;
+          height: 95%;
+          margin-left: 5%;
+          margin-right: 5%;
+          margin-bottom: 5%
+        }
 
-            }
-            .demo-layout-transparent .mdl-layout__header,
-            .demo-layout-transparent .mdl-layout__drawer-button {
-              /* This background is dark, so we set text to white. Use 87% black instead if
-                 your background is light. */
-              color: black;
-            }
-            .center {
-              width: 90%;
-              height: 95%;
-              margin-left: 5%;
-              margin-right: 5%;
-              margin-bottom: 5%
-            }
-
-            .center-text{
-              position: absolute;
-              top: 27.5%;
-              left: 27.5%;
-            }
-
-            
-            </style>
+        .center-text{
+          position: absolute;
+          top: 27.5%;
+          left: 27.5%;
+        }
+      </style>
 
             <div class="demo-layout-transparent mdl-layout mdl-js-layout">
               <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -96,7 +98,9 @@
 
               <div class="demo-card-wide mdl-card mdl-shadow--2dp center">
                 <div class="mdl-card__title">
-                  <h2 class="mdl-card__title-text center-text">Is Alex Turner a God?</h2>
+                  <h2 class="mdl-card__title-text center-text">{{
+                    question
+                  }}</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
                   <!-- Primary-colored flat button -->
@@ -118,10 +122,7 @@
               </div>
             </div>
 
-        </li>
-      </ul>
     </div>
-    
   </body>
 
 </html>
