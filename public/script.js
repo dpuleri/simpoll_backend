@@ -1,8 +1,15 @@
 // Code goes here
 
 var myApp = angular.module('app', []);
+myApp.config(['$httpProvider', function($httpProvider) {
+ $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  }
+]);
 
 myApp.controller('MainCtrl', function ($scope, $http){
+
+  
 
   $http({
           url: 'http://simpoll-remote.cloudapp.net/poll/563e510a886d36304f357dfd',
