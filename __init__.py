@@ -16,9 +16,13 @@ def hello():
 def api_poll(poll_id):
     return restful.get_poll(poll_id)
 
-@app.route('/polls', methods=['GET'])
+@app.route('/polls/chron', methods=['GET'])
 def api_polls():
-    return restful.get_polls()
+    return restful.get_polls_chron()
+
+@app.route('/polls/top', methods=['GET'])
+def api_polls():
+    return restful.get_polls_top()
 
 if __name__ == '__main__':
     app.run()
