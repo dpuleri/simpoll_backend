@@ -1,5 +1,5 @@
 import datetime
-from Simpoll import db
+from simpoll_backend import db
 
 class Poll(db.Document):
     created_at = db.DateTimeField(default=datetime.datetime.now, required=True)

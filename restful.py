@@ -1,5 +1,5 @@
 import json
-from Simpoll.models import Poll
+from simpoll_backend.models import Poll
 
 def get_poll(poll_id):
     # for some reason mongoengine uses id instead of _id..
