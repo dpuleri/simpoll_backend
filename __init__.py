@@ -16,7 +16,7 @@ get_blueprints(app)
 def hello():
     return "Hello this is world"
 
-@app.route('/<poll_id>/', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/<poll_id>', methods=['GET', 'PUT', 'DELETE'])
 def api_one_poll(poll_id):
     if request.method == 'GET':
         # handle 404 inside function
