@@ -8,9 +8,9 @@ class Poll(db.Document):
     question = db.StringField(max_length=255, required=True)
     option1 = db.StringField(max_length=255, required=True)
     option2 = db.StringField(max_length=255, required=True)
-    option1votes = db.IntField(required=True)
-    option2votes = db.IntField(required=True)
-    topscore = db.IntField(required=True)
+    option1votes = db.IntField(default=0, required=True)
+    option2votes = db.IntField(default=0, required=True)
+    topscore = db.IntField(default=0, required=True)
 
     def get_absolute_url(self):
         # it's okay to use the first 7 bytes for url
