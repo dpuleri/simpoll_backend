@@ -44,7 +44,7 @@ def to_json(doc):
            "option2": doc.option2,
            "option1votes": doc.option1votes,
            "option2votes": doc.option2votes,
-           "topscore": str(doc.topscore),
+           "topscore": doc.topscore
     }
     return json.dumps(json_dict)
 
