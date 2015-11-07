@@ -22,6 +22,8 @@ def api_one_poll(poll_id):
         # handle 404 inside function
         return restful.get_poll(poll_id)
     elif request.method == 'PUT':
+        if not request.json:
+            abort(400)
         return restful.put_poll(poll_id, request)
     else:
         print 'We do not support that at this time'
