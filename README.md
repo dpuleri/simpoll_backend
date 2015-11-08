@@ -6,4 +6,4 @@ Simpoll REST Backend
 - API allows one to get top 100 posts by chronology or by top score
 - We also wrote a small a small website that allows users to dynamically share their questions with other users that are not using the app
 
-![Screenshot of web-sharing interface](https://www.dropbox.com/s/tq9atnzi3y0t7wk/simpoll_web_sceenshot.png?dl=0 "Web-sharing interface")
+![Screenshot of web-sharing interface](https://dl.dropboxusercontent.com/u/73851213/simpoll_web_sceenshot.png)
