@@ -38,7 +38,7 @@
     .demo-card-wide > .mdl-card__title {
       color: #fff;
       height: 176px;
-      
+
     }
     .demo-card-wide > .mdl-card__menu {
       color: #fff;
@@ -74,25 +74,51 @@
       <div class="mdl-card__supporting-text">
 
       </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <span class="options_txt">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          {{option1}}
-        </a>
-        </span>
-        <span class="options_number">
-          {{numopt1}}
-        </span>
+      <!-- this is the div that normally shows before user input -->
+      <div ng-show="!selected">
+        <div class="mdl-card__actions mdl-card--border">
+          <span class="options_txt">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="selectedOption1();">
+            {{option1}}
+          </a>
+          </span>
+          <span class="options_number">
+            {{option1votes}}
+          </span>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <span class="options_txt">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="selectedOption2();">
+            {{option2}}
+          </a>
+          </span>
+          <span class="options_number">
+            {{option2votes}}
+          </span>
+        </div>
       </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <span class="options_txt">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          {{option2}}
-        </a>
-        </span>
-        <span class="options_number">
-          {{numopt2}}
-        </span>
+      <!-- this is the div that shows after something has been selected -->
+      <div ng-show="selected">
+        <div class="mdl-card__actions mdl-card--border">
+          <span class="options_txt">
+          <a class="mdl-button">
+            {{option1}}
+          </a>
+          </span>
+          <span class="options_number">
+            {{option1votes}}
+          </span>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <span class="options_txt">
+          <a class="mdl-button">
+            {{option2}}
+          </a>
+          </span>
+          <span class="options_number">
+            {{option2votes}}
+          </span>
+        </div>
       </div>
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
