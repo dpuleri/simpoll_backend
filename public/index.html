@@ -43,24 +43,56 @@
     .demo-card-wide > .mdl-card__menu {
       color: #fff;
     }
+    body {
+      background-color: #fcf398;
+    }
+    .options_txt {
+      float: left;
+    }
+    .options_number {
+      font-weight: bold;
+      float: right;
+      clear: right;
+    }
+    .mdl-card__actions {
+      background-color: #fff;
+    }
+    #my_card {
+      position: relative;
+      top: 50%;
+      transform: translateY(50%);
+    }
+    .mdl-card__title-text {
+      font-size: 3.5em;
+    }
     </style>
 
-    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div id="my_card" class="demo-card-wide mdl-card mdl-shadow--2dp">
       <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">{{question}}</h2>
+        <h1 class="mdl-card__title-text">{{question}}</h1>
       </div>
       <div class="mdl-card__supporting-text">
 
       </div>
       <div class="mdl-card__actions mdl-card--border">
+        <span class="options_txt">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           {{option1}}
         </a>
+        </span>
+        <span class="options_number">
+          {{numopt1}}
+        </span>
       </div>
       <div class="mdl-card__actions mdl-card--border">
+        <span class="options_txt">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
           {{option2}}
         </a>
+        </span>
+        <span class="options_number">
+          {{numopt2}}
+        </span>
       </div>
       <div class="mdl-card__menu">
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
