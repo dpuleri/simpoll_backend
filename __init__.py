@@ -21,8 +21,11 @@ def root_route():
 
 @app.route("/<poll_id>")
 def share_url(poll_id):
-    root_dir = os.path.dirname(os.getcwd())
     return send_from_directory('public', 'index.html')
+
+@app.route("/script.js")
+def return_js():
+    return send_from_directory('public', 'script.js')
 
 @app.route('/poll/<poll_id>', methods=['GET', 'PUT', 'DELETE'])
 def api_one_poll(poll_id):
