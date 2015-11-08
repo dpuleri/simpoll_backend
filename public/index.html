@@ -21,6 +21,16 @@
     <div ng-controller="MainCtrl">
     <!-- Uses a transparent header that draws on top of the layout's background -->
       <style>
+        .lefty{
+          margin-right: 1em;
+        }
+        .mdl-card__supporting-text{
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: auto;
+          margin-left: auto;
+          
+        }
         .mdl-button {
           min-width: 49%;
           height: 10em;
@@ -106,11 +116,11 @@
                 <div class="mdl-card__supporting-text">
                   <!-- Primary-colored flat button -->
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ">
-                    Yes
+                    {{ option1 }}
                   </button>
                   <!-- Colored raised button -->
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ">
-                    R U Mine Alex?
+                   {{ option2 }}
                   </button>
 
 

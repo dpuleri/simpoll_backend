@@ -7,23 +7,29 @@ myApp.config(['$httpProvider', function($httpProvider) {
   }
 ]);
 
-myApp.controller('MainCtrl', function ($scope, $http){
+myApp.controller('MainCtrl', function ($scope, $http, $location){
 
-  
+  var url = $location.path()
+  console.log('the url is' + url)
 
   $http({
           url: 'http://simpoll-remote.cloudapp.net/poll/563e510a886d36304f357dfd',
           method: "GET",
         }).success(function (data, status, headers, config) {
+          console.log("1");
           console.log(data);
+          $scope.data = data;
+          $scope.option1 = $scope.data.option1;
+          $scope.option2 = $scope.data.option2;
+          $scope.question = $scope.data.question;
+
 
         }).error(function (data, status, headers, config) {
-          
           console.log("Data not retrieved");
           console.log(data);
         });
 
-  $scope.question = "Hey dad, I made it";
+
   
   $scope.addItem = function(){
     if ($scope.newItem !== ""){
