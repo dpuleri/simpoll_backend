@@ -13,9 +13,14 @@ myApp.controller('MainCtrl', function ($scope, $http, $location){
 
   var url = $location.path()
   console.log('the url is' + url)
+  // Retrieving the ID from the URL
+  var url = $location.absUrl();
+  var reversed = url.split("").reverse().join("");
+  id = reversed.split("/")[0]
+  id = id.split("").reverse().join("");
 
   $http({
-          url: 'http://simpoll-remote.cloudapp.net/poll/563e510a886d36304f357dfd',
+          url: 'http://simpoll-remote.cloudapp.net/poll/' + id,
           method: "GET",
         }).success(function (data, status, headers, config) {
           console.log("1");
@@ -36,7 +41,7 @@ myApp.controller('MainCtrl', function ($scope, $http, $location){
   }
 
 
-  
+
   $scope.addItem = function(){
     if ($scope.newItem !== ""){
       $scope.todos.push($scope.newItem);
@@ -44,18 +49,6 @@ myApp.controller('MainCtrl', function ($scope, $http, $location){
     }
   }
 
-    
-  
-});
 
-/*************************
- * Homework (not rly):
- * - "enter" button functionality instead of clicking button
- * - edit button functionality
- * - button to mark item as "complete"
- * - have a total number of items at the top
- * - make it prettier
- * - add a due date
- * - add reminder (setInterval)
- * 
- * *********************/
+
+});
