@@ -19,66 +19,7 @@
 
   <body ng-app="app">
     <div ng-controller="MainCtrl">
-    <!-- Uses a transparent header that draws on top of the layout's background -->
-      <style>
-        .lefty{
-          margin-right: 1em;
-        }
-        .mdl-card__supporting-text{
-          margin-left: auto;
-          margin-right: auto;
-          margin-bottom: auto;
-          margin-left: auto;
-          
-        }
-        .mdl-button {
-          min-width: 49%;
-          height: 10em;
-          /*line-height: 1000%;*/
-        }
-        .demo-layout-transparent {
-         
-          background-color: #FCF398;
-
-        }
-        .mdl-card__title-text{
-          font-size: 300%;
-        }
-        .mdl-layout-title{
-
-        }
-        .demo-layout-transparent .mdl-layout__header,
-        .demo-layout-transparent .mdl-layout__drawer-button {
-          /* This background is dark, so we set text to white. Use 87% black instead if
-             your background is light. */
-          color: black;
-        }
-        .center {
-          width: 90%;
-          height: 95%;
-          margin-left: 5%;
-          margin-right: 5%;
-          margin-bottom: 5%
-        }
-
-        .center-text{
-          position: absolute;
-          top: 27.5%;
-          left: 27.5%;
-        }
-      </style>
-
-            <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-              <header class="mdl-layout__header mdl-layout__header--transparent">
-                <div class="mdl-layout__header-row">
-                  <!-- Title -->
-                  <span class="mdl-layout-title">Welcome to Simpoll</span>
-                  <!-- Add spacer, to align navigation to the right -->
-                  <div class="mdl-layout-spacer"></div>
-                  <!-- Navigation -->
-        
-                </div>
-              </header>
+  
               <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Simpoll</span>
                 <nav class="mdl-navigation">
@@ -90,48 +31,55 @@
               </div>
               <main class="mdl-layout__content">
               </main>
-              <!-- Wide card with share menu button -->
-              <style>
-              .demo-card-wide.mdl-card {
-                
-              }
-              .demo-card-wide > .mdl-card__title {
-                color: #fff;
-                height: 55%;
-                width: 100%;
-                background-color: #D193D1;
 
-              }
-              .demo-card-wide > .mdl-card__menu {
-                color: #fff;
-              }
-              </style>
+            <!-- Wide card with share menu button -->
+            <center>
+    <style>
+    .mdl-card_actions.mdl-card--border{
+      height: 100%;
+    }
+    .mdl-card--border{
 
-              <div class="demo-card-wide mdl-card mdl-shadow--2dp center">
-                <div class="mdl-card__title">
-                  <h2 class="mdl-card__title-text center-text">{{
-                    question
-                  }}</h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-                  <!-- Primary-colored flat button -->
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ">
-                    {{ option1 }}
-                  </button>
-                  <!-- Colored raised button -->
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ">
-                   {{ option2 }}
-                  </button>
+      height: 3em;
+    }
+    .demo-card-wide.mdl-card {
+      width: 512px;
+      background-color: #D193D1;
+    }
+    .demo-card-wide > .mdl-card__title {
+      color: #fff;
+      height: 176px;
+      background: url('../assets/demos/welcome_card.jpg') center / cover;
+    }
+    .demo-card-wide > .mdl-card__menu {
+      color: #fff;
+    }
+    </style>
 
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">{{question}}</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
 
-
-                </div>
-
-                <div class="mdl-card__menu">
-                  
-                </div>
-              </div>
-            </div>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          {{option1}}
+        </a>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+          {{option2}}
+        </a>
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">share</i>
+        </button>
+      </div>
+    </div>
+    </center>
 
     </div>
   </body>

@@ -9,6 +9,8 @@ myApp.config(['$httpProvider', function($httpProvider) {
 
 myApp.controller('MainCtrl', function ($scope, $http, $location){
 
+  $scope.select = false;
+
   var url = $location.path()
   console.log('the url is' + url)
 
@@ -28,6 +30,10 @@ myApp.controller('MainCtrl', function ($scope, $http, $location){
           console.log("Data not retrieved");
           console.log(data);
         });
+
+  $scope.selectedOption = function(){
+    $scope.select = true;
+  }
 
 
   
